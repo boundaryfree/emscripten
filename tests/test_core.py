@@ -3022,7 +3022,7 @@ Var: 42
     export_count = get_data_export_count('test_dlfcn_self.wasm')
     # ensure there aren't too many globals; we don't want unnamed_addr
     self.assertGreater(export_count, 20)
-    self.assertLess(export_count, 56)
+    self.assertLess(export_count, 65)
 
   @needs_dlfcn
   def test_dlfcn_unique_sig(self):
@@ -8469,7 +8469,7 @@ def make_run(name, emcc_args, settings=None, env=None):
 # Main wasm test modes
 wasm0 = make_run('wasm0', emcc_args=['-O0'])
 wasm0g = make_run('wasm0g', emcc_args=['-O0', '-g'])
-wasm1 = make_run('wasm1', emcc_args=['-O1'])
+wasm1 = make_run('wasm1', emcc_args=['-O1', '-g'])
 wasm2 = make_run('wasm2', emcc_args=['-O2'])
 wasm2g = make_run('wasm2g', emcc_args=['-O2', '-g'])
 wasm3 = make_run('wasm3', emcc_args=['-O3'])
